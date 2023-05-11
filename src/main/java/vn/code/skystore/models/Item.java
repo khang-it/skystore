@@ -35,5 +35,4 @@ public class Item {
         this.code = code;
         this.name = name;
     }
-
 }

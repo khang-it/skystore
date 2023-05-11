@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Header, Sidebar, Content, Footer with CSS Display Grid</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .wrapper {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 300px 1fr 200px;
+        min-height: 100vh;
+      }
+
+      header {
+        grid-column: 1 / span 3;
+        background-color: #444;
+        color: #fff;
+        padding: 20px;
+      }
+
+      .sidebar-left {
+        grid-column: 1;
+        background-color: #999;
+        color: #fff;
+        padding: 20px;
+      }
+
+      .content {
+        grid-column: 2;
+        background-color: #fff;
+        padding: 20px;
+      }
+
+      .sidebar-right {
+        grid-column: 3;
+        background-color: #999;
+        color: #fff;
+        padding: 20px;
+      }
+
+      footer {
+        grid-column: 1 / span 3;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+      }
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>Header</header>
+    <div class="sidebar-left">Sidebar</div>
+    <div class="content">
+        Content
+    </div>
+    <div class="sidebar-right">Sidebar right</div>
+    <footer>Footer</footer>
+</div>
+
+</body>
+</html>

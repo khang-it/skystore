@@ -3,10 +3,7 @@ package vn.code.skystore.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import vn.code.skystore.models.Item;
 import vn.code.skystore.models.ResponseObject;
 import vn.code.skystore.repositories.ItemRepository;
@@ -48,5 +45,15 @@ public class ItemController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
                 new ResponseObject("false", "Cannot find item with id = " + id, "")
         );
+    }
+
+    @GetMapping("/entity")
+    String getNameEntity(@RequestParam(name = "name") String name) {
+        String val = "";
+        Item item = new Item();
+        item.setName(name);
+
+        val = item.getName();
+        return val;
     }
 }
